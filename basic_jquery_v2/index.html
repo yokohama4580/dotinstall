@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="ja">
+  <meta charset="UTF-8">
+  <title>jQueryの練習</title>
+</head>
+<body>
+  <p>jQueryの練習</p>
+  <button>Add!</button>
+  <ul id="main">
+    <li>0</li>
+    <li class="item">1</li>
+    <li class="item">2</li>
+    <li>
+        3
+        <ul id="sub">
+          <li>3-0</li>
+          <li>3-1</li>
+          <li class="item">3-2</li>
+          <li class="item">3-3</li>
+          <li>3-4</li>
+        </ul>
+    </li>
+  </ul>
+  <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+  <script>
+    $(function(){
+      $('button').click(function(){
+        var p = $('<p>').text('vanish!').addClass('vanish');
+        $(this).before(p);
+      });
+
+      // $('.vanish').click(function(){
+      //   $(this).remove();
+      // });
+
+      $('body').on('click', '.vanish', function(){
+        $(this).remove();
+      });
+
+      // $("#main .item").css('color','red');
+      // $("p, .item").css('color','red');
+      // $(".item + .item").css('color','red');
+
+    })
+  </script>
+</body>
+</html>
